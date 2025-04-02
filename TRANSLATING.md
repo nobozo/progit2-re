@@ -54,7 +54,7 @@ The following are guidelines to help you on your way:
 
 ### Starting a new translation
 
-If there is no project for your language, you can start your own translation.
+If there's no project for your language, you can start your own translation.
 
 Base your work on the second edition of the book, available [here](https://github.com/progit/progit2). To do so:
  1. Pick the correct [ISO 639 code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for your language.
@@ -77,8 +77,8 @@ On https://git-scm.com, the translations are divided into three categories. Once
 GitHub Actions is a [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) service that integrates with GitHub. GitHub Actions is used to ensure that a pull-request doesn't break the build or compilation. GitHub Actions can also provide compiled versions of the book.
 
 The configuration for GitHub Actions is contained in the `.github/workflows` directory, and if you bring in the `main` branch of the root repository you'll get them for free.
-However, if you created your translation repo by _forking_ the root repo, there's an extra step you must complete (if you did not fork, you can skip this part).
-GitHub assumes that forks will be used to contribute to the repo from which they were forked, so you'll have to visit the "Actions" tab on your forked repo, and click the "I understand my workflows" button to allow the actions to run.
+However, if you created your translation repository by _forking_ the root repository, there's an extra step you must complete (if you did not fork, you can skip this part).
+GitHub assumes that forks will be used to contribute to the repository from which they were forked, so you'll have to visit the "Actions" tab on your forked repository, and click the "I understand my workflows" button to allow the actions to run.
 
 ## Setting up a publication chain for e-books
 
@@ -88,7 +88,7 @@ This is a technical task, please ping @jnavila to get started with epub publicat
 
 Translating the book is the first step. Once this is finished, you could consider translating the user interface of Git itself.
 
-This task requires a more technical knowledge of the tool than the book. Hopefully, after having translated the full book content, you can understand the terms used in the application. If you feel technically up to the task, the repo is [here](https://github.com/git-l10n/git-po) and you just have to follow the [guide](https://github.com/git-l10n/git-po/blob/master/po/README.md).
+This task requires a more technical knowledge of the tool than the book. Hopefully, after having translated the full book content, you can understand the terms used in the application. If you feel technically up to the task, the repository is [here](https://github.com/git-l10n/git-po) and you just have to follow the [guide](https://github.com/git-l10n/git-po/blob/master/po/README.md).
 
 Beware though that
 
