@@ -15,22 +15,22 @@ namespace :book do
   # Check contributors list
   # This checks commit hash stored in the header of list against current HEAD
   def check_contrib
-    if File.exist?('book/contributors.txt')
-      current_head_hash = `git rev-parse --short HEAD`.strip
-      header = `head -n 1 book/contributors.txt`.strip
-      # Match regex, then coerce resulting array to string by join
-      header_hash = header.scan(/[a-f0-9]{7,}/).join
-
-      if header_hash == current_head_hash
-        puts "Hash on header of contributors list (#{header_hash}) matches the current HEAD (#{current_head_hash})"
-      else
-        puts "Hash on header of contributors list (#{header_hash}) does not match the current HEAD (#{current_head_hash}), refreshing"
-        sh "rm book/contributors.txt"
-        # Reenable and invoke task again
-        Rake::Task['book/contributors.txt'].reenable
-        Rake::Task['book/contributors.txt'].invoke
-      end
-    end
+#    if File.exist?('book/contributors.txt')
+#      current_head_hash = `git rev-parse --short HEAD`.strip
+#      header = `head -n 1 book/contributors.txt`.strip
+#      # Match regex, then coerce resulting array to string by join
+#      header_hash = header.scan(/[a-f0-9]{7,}/).join
+#
+#      if header_hash == current_head_hash
+#        puts "Hash on header of contributors list (#{header_hash}) matches the current HEAD (#{current_head_hash})"
+#      else
+#        puts "Hash on header of contributors list (#{header_hash}) does not match the current HEAD (#{current_head_hash}), refreshing"
+#        sh "rm book/contributors.txt"
+#        # Reenable and invoke task again
+#        Rake::Task['book/contributors.txt'].reenable
+#        Rake::Task['book/contributors.txt'].invoke
+#      end
+#    end
   end
 
   desc 'build basic book formats'
@@ -61,8 +61,7 @@ namespace :book do
 #  end
 
   desc 'build HTML format'
-  task :build_html => 'book/contributors.txt' do
-      check_contrib()
+  task :build_html do
 
       puts 'Converting to HTML...'
       sh "bundle exec asciidoctor #{params} -a data-uri progit.asc"
